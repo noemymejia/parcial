@@ -13,8 +13,17 @@ return new class extends Migration
     {
         Schema::table('ctl_productos', function (Blueprint $table) {
             //
+            
+            $table->id();
+            $table->string('name');
+            $table->foreignId('categoria_id')->constrained()->onDelete('cascade');
+            $table->decimal('price', 8, 2);
+            $table->text('description')->nullable();
+            $table->timestamps();
             $table->boolean('activo')->default(true);
-        });
+            
+
+        }); 
     }
 
     /**

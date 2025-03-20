@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::table('ctl_categoria', function (Blueprint $table) {
             //
+            $table->id();
+            $table->string('name');
+            $table-timestamps();
             $table->boolean('activo')->default(true);
         });
     }

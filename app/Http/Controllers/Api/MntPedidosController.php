@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Validator;
 
 class MntPedidosController extends Controller
 {
-    //
+    // 
     public function index(){
         try {
             //code...
