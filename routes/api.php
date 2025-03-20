@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CtlCategoriaController;
 use App\Http\Controllers\Api\CtlProductosController;
+use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\OrderController;
+
+Route::get('/products', [ProductosController::class, 'index']);
+Route::middleware('auth:sanctum')->get('/orders', [OrderController::class, 'index']);
+
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -58,8 +64,6 @@ Route::prefix('catalogo')->group(function(){
 });
 
 Route::prefix('pedidos')->group(function(){
-    Route::get('/',[MntPedidosController::class,'index']);
+    Route::get('/filter',[MntPedidosController::class,'filterPedidosByClienteAndProduct']);
     Route::post('/',[MntPedidosController::class,'store']);
 });
-//Grupo whatsapp
-//https://chat.whatsapp.com/LciKaMzZtmm51TXbsV3pnV
