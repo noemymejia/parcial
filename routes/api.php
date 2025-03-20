@@ -12,7 +12,7 @@ use App\Http\Controllers\Api\CtlProductosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\OrderController;
 
-Route::get('/products', [ProductosController::class, 'index']);
+Route::get('/productos', [ProductosController::class, 'index']);
 Route::middleware('auth:sanctum')->get('/orders', [OrderController::class, 'index']);
 
 
